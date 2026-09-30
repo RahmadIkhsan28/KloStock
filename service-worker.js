@@ -1,0 +1,5 @@
+const CACHE_NAME = 'klostock-cache-v13';
+const APP_FILES = ['index.html', 'style.css', 'app.js', 'manifest.json', 'icon.png', 'assets/logo.svg', 'assets/logo-192.png', 'assets/logo.jpg', 'js/storage.js', 'js/auth.js', 'js/login.js', 'js/profile.js', 'js/dashboard.js', 'js/barang.js', 'js/form.js', 'js/detail.js', 'pages/barang.html', 'pages/tambah-barang.html', 'pages/detail-barang.html', 'pages/edit-barang.html', 'pages/login.html', 'pages/profile.html'];
+self.addEventListener('install', event => event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES))));
+self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))));
+self.addEventListener('fetch', event => { if (event.request.method !== 'GET') return; event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => { const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); return response; }).catch(() => caches.match('index.html')))); });

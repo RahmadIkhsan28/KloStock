@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0d403b">
+  <meta name="description" content="KloStock — Belanja harian tanpa ribet.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css?v=12">
+  <title>KloStock · Dashboard</title>
+</head>
+<body data-page="dashboard">
+  <div class="splash-screen" id="splashScreen">
+    <img class="splash-logo logo-image" src="assets/logo-192.png" alt="KloStock"><h1>KloStock</h1><p>Belanja harian tanpa ribet.</p><span class="loader"></span><small>by VL</small>
+  </div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><img class="brand-mark logo-image" src="assets/logo-192.png" alt="KloStock"><div><strong>KloStock</strong><span>Grocery workspace</span></div></div>
+      <nav class="side-nav"><a class="nav-link active" href="index.html"><span>⌂</span>Dashboard</a><a class="nav-link" href="pages/barang.html"><span>▦</span>Data Produk</a><a class="nav-link" href="pages/tambah-barang.html"><span>＋</span>Tambah Produk</a><a class="nav-link" href="pages/profile.html"><span>◎</span>Profile</a></nav>
+      <div class="sidebar-note"><span class="note-dot"></span><div><b>Mode offline siap</b><small>Data tersimpan di perangkat ini.</small></div></div>
+      <div class="sidebar-footer"><a class="avatar" href="pages/profile.html" title="Profile" data-user-initials>VL</a><div><b data-user-name>VL</b><small data-user-role>Workspace owner</small></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><button class="icon-button menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button><div class="breadcrumbs"><span>Workspace</span><b>›</b><strong>Dashboard</strong></div><div class="top-actions"><button class="icon-button" title="Notifikasi">♧</button><a class="avatar" href="pages/profile.html" title="Profile">ST</a></div></header>
+      <div class="page-content">
+        <section class="welcome-row"><div><p class="eyebrow">SELAMAT DATANG KEMBALI</p><h1>Kelola toko <em>tanpa ribet.</em></h1><p class="lead">Pantau stok harian dan rapikan toko dalam satu ruang kerja yang sederhana.</p></div><a class="primary-button" href="pages/tambah-barang.html">＋ Tambah Produk</a></section>
+        <section class="hero-banner"><div class="hero-copy"><span class="pill light-pill">● Data tersimpan aman di perangkat</span><h2>Toko yang rapi,<br><span>keputusan lebih cepat.</span></h2><p>Semua data tersimpan lokal dan tetap bisa diakses saat offline.</p></div><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><div class="hero-stats"><div class="floating-stat"><span>STOK</span><strong id="stockPercent">86%</strong><small>kondisi aman</small></div><div class="floating-stat value-stat"><span>NILAI STOK</span><strong id="heroValue">Rp 0</strong><small>nilai total barang</small></div></div></section>
+        <section class="stats-grid"><article class="stat-card"><div class="stat-icon teal">▦</div><div><span>Total Barang</span><strong id="totalProducts">0</strong><small>item terdaftar</small></div></article><article class="stat-card"><div class="stat-icon green">↗</div><div><span>Total Stok</span><strong id="totalStock">0</strong><small>unit tersedia</small></div></article><article class="stat-card"><div class="stat-icon yellow">Rp</div><div><span>Nilai Stok</span><strong id="inventoryValue">Rp 0</strong><small>harga × stok</small></div></article><article class="stat-card"><div class="stat-icon red">!</div><div><span>Stok Menipis</span><strong id="lowStock">0</strong><small>perlu perhatian</small></div></article></section>
+        <section class="charts-grid"><article class="panel chart-panel"><div class="panel-heading"><div><h2>Ringkasan Stok</h2><p>Pantau jumlah stok berdasarkan kategori.</p></div><span class="panel-menu">•••</span></div><div class="chart-wrap"><canvas id="categoryChart"></canvas></div></article><article class="panel chart-panel donut-panel"><div class="panel-heading"><div><h2>Status Stok</h2><p>Kondisi stok toko saat ini.</p></div><span class="panel-menu">•••</span></div><div class="donut-wrap"><canvas id="statusChart"></canvas><div class="donut-center"><strong id="safePercent">0%</strong><span>aman</span></div></div><div class="legend"><span><i class="dot safe"></i>Aman</span><span><i class="dot warning"></i>Menipis</span><span><i class="dot empty"></i>Habis</span></div></article></section>
+        <section class="panel recent-panel"><div class="panel-heading"><div><h2>Produk Terbaru</h2><p>Produk yang baru saja masuk ke toko.</p></div><a class="text-button" href="pages/barang.html">Lihat Semua <span>→</span></a></div><div class="recent-list" id="recentProducts"></div></section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div><script src="js/storage.js?v=12"></script><script src="js/auth.js?v=12"></script><script src="app.js?v=12"></script><script src="js/dashboard.js?v=12"></script>
+</body>
+</html>
+
+``

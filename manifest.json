@@ -1,0 +1,10 @@
+{
+  "name": "KloStock — Toko Kelontong",
+  "short_name": "KloStock",
+  "description": "Belanja harian tanpa ribet.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f6f8f7",
+  "theme_color": "#0d403b",
+  "icons": [{ "src": "icon.png", "sizes": "192x192", "type": "image/png" }]
+}
